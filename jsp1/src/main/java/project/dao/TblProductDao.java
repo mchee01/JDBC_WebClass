@@ -14,7 +14,7 @@ import project.vo.ProductVo;
 
 public class TblProductDao {
     
-    public static final String URL ="jdbc:oracle:thin:@localhost:1521/xe";
+    public static final String URL ="jdbc:oracle:thin:@//localhost:1521/xe";
     public static final String USERNAME = "c##idev";
     private static final String PASSWORD = "1234";
 
@@ -35,12 +35,10 @@ public class TblProductDao {
             psmt.setString(1, category);
 		    ResultSet rs = psmt.executeQuery();
 		    while(rs.next()) {  //조회결과는 n행 가능성 예측
-			    list.add(new ProductVo( rs.getString(1), 
+			    list.add(new ProductVo(rs.getString(1), 
                                         rs.getString(2), 
                                         rs.getString(3), 
-                                        rs.getInt(4)
-                                        )
-			    		);
+                                        rs.getInt(4)));
 		    }
         }catch(SQLException e){
             System.out.println("selectByCategory 예외 발생 : " + e.getMessage());

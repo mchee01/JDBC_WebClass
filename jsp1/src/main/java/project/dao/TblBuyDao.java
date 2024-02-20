@@ -16,7 +16,7 @@ import project.vo.CustomerBuyVo;
 
 public class TblBuyDao {
     
-    public static final String URL ="jdbc:oracle:thin:@//localhost:1521/xe";
+    public static final String URL ="jdbc:oracle:thin:@localhost:1521/xe";
     public static final String USERNAME = "c##idev";
     private static final String PASSWORD = "1234";
 
