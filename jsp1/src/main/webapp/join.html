@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 작성자 : xxx   -->
+
+<head>
+  <meta charset="UTF-8">
+  <title>NC Dinos</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <ul>
+      <li><img src="assets/images/img-embelm-128@2x.png" 
+      			width="50px" height="50px">
+      </li>
+      <li>
+        <h3>회원가입</h3>
+        <p>티켓예매, 포인트 등 다양한 혜택을 누리세요.</p>
+      </li>
+    </ul>
+    <div class="content">
+    <!-- * action 에 서버의 주소를 설정합니다. *
+    	 * method 속성은 get은 조회 , post 는 저장(수정) *
+    -->
+      <form action="welcome.jsp" method="post">
+        <ul>
+          <li>아이디</li>
+          <li>
+            <input type="text" name="userid">
+          </li>
+          <li>비밀번호</li>
+          <li>
+            <input type="text" name="password">
+          </li>
+        </ul>
+        <button type="button" id="join">회원가입</button>
+      </form>
+    </div>
+  </div>
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>
