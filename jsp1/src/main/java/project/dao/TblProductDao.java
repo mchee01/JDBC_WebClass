@@ -14,11 +14,17 @@ import project.vo.ProductVo;
 
 public class TblProductDao {
     
-    public static final String URL ="jdbc:oracle:thin:@//localhost:1521/xe";
+    public static final String URL ="jdbc:oracle:thin:@localhost:1521/xe";
     public static final String USERNAME = "c##idev";
     private static final String PASSWORD = "1234";
 
     private Connection getConnection() throws SQLException {
+    	try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         return DriverManager.getConnection(URL, USERNAME, PASSWORD);
     }
 

@@ -17,6 +17,12 @@ public class TblCustomerDao {
     private static final String PASSWORD = "1234";
 
     private Connection getConnection() throws SQLException {
+    	try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         return DriverManager.getConnection(URL, USERNAME, PASSWORD);
     }
     //회원 가입

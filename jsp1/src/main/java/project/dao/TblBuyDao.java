@@ -19,13 +19,20 @@ public class TblBuyDao {
     public static final String URL ="jdbc:oracle:thin:@localhost:1521/xe";
     public static final String USERNAME = "c##idev";
     private static final String PASSWORD = "1234";
-
+    
     private Connection getConnection() throws SQLException {
+    	try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         return DriverManager.getConnection(URL, USERNAME, PASSWORD);
     }
     //executeUpdate 메소드는 insert,update,delete 가 정상 실행(반영되 행 있으면)되면 1을 리턴, 
     //                       특히 update, delete 는 조건에 맞는 행이 없어서 반영된 행이 없으면 0을 리턴. 
     //구매하기
+    
     public int insert(BuyVo vo){
         // 할일1 : SQL 작성하기 (매개변수 표시 정확히 합시다.)
         String sql="INSERT INTO TBL_BUY \r\n" + 
