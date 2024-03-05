@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="tblcustomer">
+	<!-- 리턴타입이 List 일때에는 제너틱타입만 설정하면 됩니다. -->
+	<select id="selectAll" resultType="CustomerDto">
+		select * from tbl_custom order by custom_id
+	</select>
+	<!--  insert, update, delete 는 리턴타입  지정안합니다.(그래도 값은 리턴해 줍니다.) -->
+	<insert id="insert" parameterType="CustomerDto">
+		insert into tbl_custom(custom_id,name,email,age,reg_date) 
+                    values (#{customId}, #{name}, #{email}, #{age}, sysdate)
+	</insert>
+	<update id="update" parameterType="CustomerDto">
+		update tbl_custom 
+		set email = #{email}, age = #{age} 
+		where custom_id = #{customId}
+	</update>
+	<delete id="delete" parameterType="String">
+		delete from tbl_custom 
+			where custom_id = #{customId}
+	</delete>
+	<select id="getCustomer" parameterType="String" resultType="CustomerDto">
+		select * from tbl_custom 
+			where custom_id = #{customId}
+	</select>
+	<select id="selectByNameAge" parameterType="java.util.Map" resultType="CustomerDto">
+		select * from tbl_custom 
+			where name = #{name} and age = #{age}
+	</select>
+</mapper>  
