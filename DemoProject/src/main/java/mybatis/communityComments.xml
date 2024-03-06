@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="communityComments">
+ 	<insert id="insert" parameterType="org.iclass.vo.CommunityComments">
+ 		INSERT INTO communityComments
+ 			(idx,mref,writer,content) 
+		VALUES 
+			(comment_idx_seq.nextval,#{mref},#{writer},#{content})
+ 	</insert>  
+ 	
+ 	<delete id="delete" parameterType="int">
+ 		DELETE FROM 
+ 			communityComments 
+ 		WHERE 
+ 			idx=#{idx}
+ 	</delete>
+ 	
+ 	<select id="maxOf" resultType="int">
+ 		SELECT max(idx) FROM communityComments 
+ 	</select>
+ 	
+ </mapper>
+ 
+ 
+ 
+ 
+ 
+ 
