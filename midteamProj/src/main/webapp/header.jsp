@@ -22,8 +22,8 @@
 </head>
 <body>
 	<ul id="header">
-		<li><a href="api/customer/join">고객 등록</a></li>
-		<li><a href="api/customer/list">고객 목록</a></li>
+		<li><a href="customer/join">고객 등록</a></li>
+		<li><a href="customer/list">고객 목록</a></li>
 		<li><a href="products">상품 관리</a></li>
 		<li><a href="buys">판매 관리</a></li>
 	</ul>

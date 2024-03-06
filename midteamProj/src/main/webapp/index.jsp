@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="../webapp/assets/js/include.js" type="javascript">
+<link href="../assets/js/include.js" type="javascript">
 </head>
 <body>
 <div data-include-path="./header.jsp"></div>

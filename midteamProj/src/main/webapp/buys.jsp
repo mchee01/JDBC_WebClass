@@ -11,9 +11,11 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 <link rel="stylesheet"  href = "assets/css/customers.css">
 <link rel="stylesheet"  href = "assets/css/modal.css">
+<link href="../assets/js/include.js" type="javascript">
 </head>
 <body>
 	<h3>구매 조회</h3>
+	
 	<div class="search"></div>
 	<!-- form action이 없을 때의 동작은? 자기 자신 url입니다. method 기본값은 GET -->
 	<hr>
